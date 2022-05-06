@@ -9,22 +9,28 @@
     <link rel="icon" type="image/x-icon" href="favIcon.png">
 </head>
 <body>
+  <h1 id="quoteText">Weather App</h1>
     <div class="mainContainer">
       <div class="gifContainer">
         <img id="gif" alt="gif">
       </div>
-      <h1 id="quoteText"></h1>
-      <p id="quoteAuthor" class="card-text"></p>
+      <p>Feels Like:</p>
+      <p class="black-text" id="feelsLike">-</p>
+      <p>Max Temp:</p>
+      <p class="black-text" id="maxTemp">-</p>
+      <p>Min Temp:</p>
+      <p class="black-text" id="minTemp">-</p>
+      <p>Humidity</p>
+      <p class="black-text" id="humidity">-</p>
+      <p>Pressure</p>
+      <p class="black-text" id="pressure">-</p>
+      <p>Wind Speed</p>
+      <p class="black-text" id="windSpeed">-</p>
     </div>
     <div class="main-content">
-      <input id="city" type="text">
+      <input id="city" type="text" placeholder="Enter a City, Province or Estate">
     </div>
-    <div>
-      <code id="result"></code>
-    </div>
-    <footer>
-      <p>Homework made by Nahuel</p>
-    </footer>
+
 <script type="text/javascript" src="index.js">  
 </script>    
 </body>
