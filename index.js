@@ -1,4 +1,4 @@
-const geoApiUrl = 'http://api.openweathermap.org/geo/1.0/direct';
+const geoApiUrl = 'https://api.openweathermap.org/geo/1.0/direct';
 const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 const apiKey = 'b888c358507b12e839f178770e433ddc';
 
@@ -14,7 +14,6 @@ input.addEventListener("keyup", async function(event) {
     const weather = await getWeather(geolocation)
 
     showWeather(weather)
-    // console.log({weather})
 });
 
 
