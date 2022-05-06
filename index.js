@@ -27,8 +27,6 @@ input.addEventListener("keyup", async function(event) {
     const gifyQuery = `Weather ${weatherStatus}`
     const imageURL = await getGifUrl(gifyQuery)
 
-    console.log(imageURL, imageURL)
-
     showWeather({ weather, imageURL })
 });
 
@@ -47,15 +45,6 @@ async function getWeather({ lat, lon }){
     windSpeed: data.wind.speed,
     status: data.weather[0].main
   }
-  // console.log(data);
-  // console.log(data.main);
-  // console.log(data.main.temp_max);
-  // console.log(data.main.temp_min);
-  // console.log(data.main.humidity);
-  // console.log(data.main.feels_like);
-  // console.log(data.main.pressure);
-  // console.log(data.weather[0].main);
-  // console.log(data.wind.speed);
 }
 
 
@@ -82,7 +71,6 @@ async function getGifUrl(query){
   const url = `${apiGifUrl}?q=${query}&api_key=${apiGifKey}&limit=1`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
   console.log(data.data[0].images.original.url);
   const gif = data.data[0].images.fixed_width.url;
   return gif;
@@ -96,6 +84,6 @@ function showWeather ({ weather, imageURL }) {
   document.getElementById('humidity').textContent = weather.humidity + '%';
   document.getElementById('pressure').textContent = weather.pressure;
   document.getElementById('windSpeed').textContent = weather.windSpeed + 'km/h';
-
+  document.getElementById('weatherStatus').textContent = weather.status;
   document.getElementById('gif').src = imageURL;
 }
